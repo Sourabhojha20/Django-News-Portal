@@ -1,0 +1,81 @@
+﻿{% extends 'Base.html' %}
+{% load static %}
+{% load embed_video_tags %}
+{% block content %}
+
+<div class="col-md-8">
+	<div class="section-title dgreen-border" style="margin-top:30px;">
+		<h2>विडियो</h2>
+	</div>
+	{% comment %} <div class="row">
+		<div class="cp-news-grid-style-6">
+			<ul class="grid">
+				{% for v in videos %}
+				<li class="col-md-6 col-sm-6 ">
+					<a href="single-post.html">
+						<div class="cp-post">
+							<div class="cp-thumbc">{% video v.video "325x300" %}</div>
+							<div class="cp-post-content">
+								<h3>{{v.title}}</h3>
+							</div>
+						</div>
+					</a>
+				</li>
+				{% endfor %}
+				<div class="clearfix"></div>
+			</ul>
+		</div>
+	</div>  {% endcomment %}
+	<div class="row">
+		<div class="cp-news-grid-style-6">
+		  <div class="col-xs-12">
+			<div class="row">
+			  {% for v in videos %}
+					{% if status == 1 %}
+						<div class="col-md-6 col-sm-6 ">
+							<a href="single-post.html">
+							<div class="cp-post ">
+								<div class="cp-thumbc ">{% video v.video "325x300" %}</div>
+								<div class="cp-post-content">
+								<h3>{{v.title}}</h3>
+								</div>
+							</div>
+							</a>
+						</div>
+					{% endif %}	
+			  {% endfor %}
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  
+	<div class="pagination-holder">
+		<nav>
+			<ul class="pagination">
+				{% if video.has_previous %}
+				<li> <a href="/DeshVidesh/?page={{video.previous_page_number}}" aria-label="Previous"> <span aria-hidden="true"><i class="fa fa-angle-left"></i></span> </a> </li>
+				{% endif %}
+				<li class="active"><a href="/video/?page=1">1 <span class="sr-only"></span></a></li>
+				<li><a href="/video/?page=2">2</a></li>
+				<li><a href="/video/?page=3">3</a></li>
+				{% if  video.has_next %}
+				<li> <a href="/video/?page={{video.next_page_number}}" aria-label="Next"> <span aria-hidden="true"><i class="fa fa-angle-right"></i></span> </a> </li>
+				{% endif %}
+			</ul>
+		</nav>
+	</div>
+	<div class="clearfix"></div>
+	
+	
+	<div class="col-md-8">
+		<div class="cp-advertisement" style="padding-bottom: 20px; padding-top: 20px;">
+			{% for a in add %}
+            {% if a.ctg == 'Footer' %}
+			<img src="{{a.image.url}}" alt="">
+			{% endif %}
+               {% endfor %}
+		</div>
+	</div>  
+</div>  
+
+{% endblock %}

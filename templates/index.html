@@ -1,0 +1,352 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="home-layout2-featured-news">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				{% for b in banner %}
+				<img alt="" src="{{b.image.url}}" class="img-thumbnail img-responsive" style="margin-bottom:20px;"> 
+				{% endfor %}
+			</div>
+			
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-sm-3">
+				<ul class="grid">
+					{% for n in news  %}
+					{% if n.show_in_home %}
+					<li class="cp-posttopleft">
+						<a href="#">
+							<div class="cp-thumbtopleft"><img src="{{n.image.url}}" alt=""  class="cp-thumbtopleft"></div>
+							<div class="cp-posttopleft-content">
+								<h3 style="color:#fff;">{{n.title}}</h3>
+							</div>
+						</a>
+					</li>
+					{% endif %}
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="col-md-5 col-sm-5 sidebar side-bar right-sidebar">
+				<div class="widget popular-post">
+					<div class="cp-sidebar-content">
+						<ul class="small-grid">
+							{% for n in news %}
+							{% if n.show_in_headline %}
+							<li>
+								<div class="small-post">
+									<a href="single-post.html">
+										<div class="cp-thumbsmall"><img alt="" src="{{n.image.url}}" class="cp-thumbsmall img-thumbnail"></div>
+										<div class="cp-post-content">
+											<h3>{{n.title}}</h3>
+											<p>+{{n.description|slice:70}} </p>
+										</div>
+									</a>
+								</div>
+							</li>
+							{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4">
+				<div class="widget advertisement">
+					{% for a in add %}
+                            {% if a.ctg == 'TopRight' %}
+                            <img class="img-responsive" src="{{a.image.url}}" alt="" style="object-fit: contain; height: 600px; width:600px" >
+                           
+                            {% endif %}
+                            
+                    {% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div> 
+
+
+
+<div class="col-md-8"> 
+	<div class="cp-news-grid-style-2 m30">
+		<div class="section-title dgreen-border">
+			<h2>मध्यप्रदेश</h2>
+		</div>
+		<div class="row">
+				<div class="col-md-12">
+					<div class="cp-fullwidth-news-post-excerpt">
+						<a href="single-post.html">
+							<li class="cp-postmpbig">
+								<div class="cp-thumbmpbig"><img src="{% static 'images/ANIL.jpg' %}" alt=""  class="cp-thumbmpbig" style="object-fit: contain"></div>
+							</li>
+							<div class="cp-post-content">
+								<h3>स्क्रेनिंग की आड़ ले दिल्ली शिफ्ट हुई कांग्रेस</h3>
+								<ul class="cp-post-tools">
+									<li><i class="icon-1"></i> May 10, 2016</li>
+								</ul>
+								<p>राजधानी के बहुत सारे पत्रकार प्रदेश के विभिन्न क्षेत्रों में जाकर समाचार पत्रों के लिए कवरेज कर रहे हैं। कुछ से बात करने की कौशिश हुई। परिणाम यह निकला कि प्रदेश में सरकार को लेकर नाराजगी है। लेकिन यह नाराजगी कांग्रेस के लिए प्रो नहीं बन पा रही है। स्क्रेनिंग का बहाना है और कांग्रेस के दिग्ग्ज नेता दिल्ली में जाकर काम कर रहे हैं। कारण सिंधिया और नाथ का निवास वहीं पर है।</p>
+							</div>
+						</a>
+					</div>
+				</div>
+				<ul class="small-grid">
+					
+				 {% for n in MadhyaPradesh|slice:":4" %}
+
+					
+					<li class="col-md-6 col-sm-6">
+						<div class="small-post">
+							<div class="cp-thumbsmall"><img alt="" src="{{n.image.url}}" class="cp-thumbsmall img-thumbnail"></div>
+							<div class="cp-post-content">
+								<h3><a href="{% url 'Detailview' n.id %}">{{n.title|slice:70}}</a></h3>
+								<ul class="cp-post-tools">
+									<li><i class="icon-1"></i> {{n.created_at}}</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					
+					{% endfor %}
+					 
+					 
+				</ul>
+		</div>
+	</div>
+	<div class="cp-news-grid-style-2 m30">
+		<div class="section-title dgreen-border">
+			<h2>देश-विदेश</h2>
+		</div>
+		<div class="row">
+				<div class="cp-news-grid-style-6">
+					<ul class="grid">
+						<li class="col-md-6 col-sm-6 col-xs-12">
+							<a href="single-post.html">
+								<div class="cp-post">
+									<div class="cp-thumbc"><img alt="" src="{% static 'images/D-18.jpg' %}" class="cp-thumbc"></div>
+									<div class="cp-post-content">
+										<h3>देश की पहली इंजन रहित ट्रेन पटरी पर उतरी, शताब्दी की</h3>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="col-md-6 col-sm-6">
+							<a href="single-post.html">
+								<div class="cp-post">
+									<div class="cp-thumbc"><img alt="" src="{% static 'images/lifestyle5.jpg' %}" class="cp-thumbc"></div>
+									<div class="cp-post-content">
+										<h3>दिल्ली : क्रेन की लिफ्ट गिरने से इंजीनियर समेत 4 की</h3>
+									</div>
+								</div>
+							</a>
+						</li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+				<ul class="small-grid">
+					{% for n in DeshVidesh|slice:":4" %}
+
+					
+					<li class="col-md-6 col-sm-6">
+						<div class="small-post">
+							<div class="cp-thumbsmall"><img alt="" src="{{n.image.url}}" class="cp-thumbsmall img-thumbnail"></div>
+							<div class="cp-post-content">
+								<h3><a href="{% url 'Detailview' n.id %}">{{n.title|slice:60}}</a></h3>
+								<ul class="cp-post-tools">
+									<li><i class="icon-1"></i> {{n.created_at}}</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					
+					{% endfor %}
+				</ul>
+		</div>
+	</div> 
+	<div class="cp-news-grid-style-4 m30">
+		<div class="section-title dgreen-border">
+			<h2>महानगर</h2>
+		</div>
+		<div class="row">
+			<div class="col-md-9">
+				<div class="row">
+					<ul class="grid">
+						{% for n in Mahanagar|slice:":4" %}
+						<li class="col-md-6 col-sm-6">
+							<a href="{% url 'Detailview' n.id %}">
+								<div class="cp-posttopleft">
+									<div class="cp-thumbtopleft"><img src="{{n.image.url}}" alt=""  class="cp-thumbtopleft" style="object-fit: contain"></div>
+									<div class="cp-posttopleft-content">
+										<h3 style="color:#fff;">{{n.title|slice:60}}</h3>
+									</div>
+								</div>
+							</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="">
+				{% for a in add %}
+            {% if a.ctg == 'RightsidebarFirst' %}
+					<img src="{{a.image.url}}" alt="" class="img-responsive">
+					{% endif %}
+               {% endfor %}
+			</div>
+				{% comment %} <div class="v-ad">
+					
+					
+				</div> {% endcomment %}
+			</div>
+		</div>
+	</div>
+	<div class="cp-news-grid-style-2 m30">
+		<div class="section-title dgreen-border">
+			<h2>खेल</h2>
+		</div>
+		<div class="row">
+				<div class="cp-news-grid-style-6">
+					<ul class="grid">
+						<li class="col-md-6 col-sm-6 col-xs-12">
+							<a href="single-post.html">
+								<div class="cp-post">
+									<div class="cp-thumbc"><img alt="" src="{% static 'images/ANIL.jpg' %}" class="cp-thumbc"></div>
+									<div class="cp-post-content">
+										<h3>पुजारा का शानदार शतक, किन्तु मामूली बढ़त</h3>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="col-md-6 col-sm-6">
+							<a href="single-post.html">
+								<div class="cp-post">
+									<div class="cp-thumbc"><img alt="" src="{% static 'images/D-18.jpg' %}" class="cp-thumbc"></div>
+									<div class="cp-post-content">
+										<h3>मध्य प्रदेश वाटर स्पोट्र्स अकादमी की खिलाड़ी बेटी हर्षिता तोमर ने</h3>
+									</div>
+								</div>
+							</a>
+						</li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+				<ul class="small-grid">
+					{% for n in khel|slice:":4" %}
+
+					
+					<li class="col-md-6 col-sm-6">
+						<div class="small-post">
+							<div class="cp-thumbsmall"><img alt="" src="{{n.image.url}}" class="cp-thumbsmall img-thumbnail"></div>
+							<div class="cp-post-content">
+								<h3><a href="{% url 'Detailview' n.id %}">{{n.title|slice:60}}</a></h3>
+								<ul class="cp-post-tools">
+									<li><i class="icon-1"></i> {{n.created_at}}</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					
+					{% endfor %}
+				</ul>
+		</div>
+	</div>
+	<div class="widget advertisement">
+		
+		<div class="" style="margin-bottom: 0px;">
+			
+			{% for a in add %}
+			{% if a.ctg == 'Header' %}
+			<img src="{{a.image.url}}" alt=""  class="img-thumbnail">
+			{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+	<div class="cp-news-grid-style-2 m30">
+		<div class="section-title dgreen-border">
+			<h2>टीवी मूवी</h2>
+		</div>
+		<div class="row">
+				<div class="col-md-12">
+					<div class="cp-fullwidth-news-post-excerpt">
+						<a href="single-post.html">
+							<li class="cp-postmpbig">
+								<div class="cp-thumbmpbig"><img src="{% static 'images/ANIL.jpg' %}" alt=""  class="cp-thumbmpbig" style="object-fit: contain"></div>
+							</li>
+							<div class="cp-post-content">
+								<h3>अब किसके साथ स्पॉट हो रही हैं दिशा</h3>
+								<ul class="cp-post-tools">
+									<li><i class="icon-1"></i> May 10, 2016</li>
+								</ul>
+								<p>बॉलीवुड के शानदार अभिनेता टाइगर श्रॉफ से ब्रेकअप की खबरों के साथ ही दिशा पाटनी को किसी और के साथ बांद्रा में घूमते कैमरों ने कैद किया तो तरह तरह के सवाल उठ खड़े हुए हैं। बताया जा रहा है कि दिशा ने टाइगर का साथ छोड़ अब मिस्ट्रीमैन का साथ पकड़ लिया है। </p>
+							</div>
+						</a>
+					</div>
+				</div>
+				<ul class="small-grid">
+					{% for n in Cinema|slice:":4" %}
+
+					
+					<li class="col-md-6 col-sm-6">
+						<div class="small-post">
+							<div class="cp-thumbsmall"><img alt="" src="{{n.image.url}}" class="cp-thumbsmall img-thumbnail"></div>
+							<div class="cp-post-content">
+								<h3><a href="{% url 'Detailview' n.id %}">{{n.title|slice:60}}</a></h3>
+								<ul class="cp-post-tools">
+									<li><i class="icon-1"></i> {{n.created_at}}</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					
+					{% endfor %}
+				</ul>
+		</div>
+	</div>
+	<div class="cp-news-grid-style-2 m30">
+		<div class="section-title dgreen-border">
+			<h2>व्यापार</h2>
+		</div>
+		<div class="row">
+				<div class="col-md-12">
+					<div class="cp-fullwidth-news-post-excerpt">
+						<a href="single-post.html">
+							<li class="cp-postmpbig">
+								<div class="cp-thumbmpbig"><img src="{% static 'images/ANIL.jpg' %}" alt=""  class="cp-thumbmpbig" style="object-fit: contain"></div>
+							</li>
+							<div class="cp-post-content">
+								<h3>अमेरिका-चीन के बीच व्यापार वार्ता बिना किसी परिणाम के समाप्त</h3>
+								<ul class="cp-post-tools">
+									<li><i class="icon-1"></i> May 10, 2016</li>
+								</ul>
+								<p>अमेरिका और चीन के वार्ताकारों के बीच व्यापार मुद्दों को लेकर दो दिन चली बातचीत बिना किसी ठोस परिणाम के समाप्त हो गई। अमेरिका और चीन के बीच व्यापार में तनाव के चलते दुनियाभर के वित्तीय बाजारों पर असर पड़ा है और वैश्विक व्यापार प्रभावित हुआ है। व्हाइट हाउस की प्रवक्ता लिंडसे वाल्टर्स ने एक वक्तव्य जारी कर कहा कि दोनों प्रतिनिधिमंडलों के बीच आर्थिक रिश्तों में निष्पक्षता, संतुलन और पारस्परिकता को लेकर विचारों का आदान प्रदान हुआ।</p>
+							</div>
+						</a>
+					</div>
+				</div>
+				<ul class="small-grid">
+					{% for n in Vyapar|slice:":4" %}
+
+					
+					<li class="col-md-6 col-sm-6">
+						<div class="small-post">
+							<div class="cp-thumbsmall"><img alt="" src="{{n.image.url}}" class="cp-thumbsmall img-thumbnail"></div>
+							<div class="cp-post-content">
+								<h3><a href="{% url 'Detailview' n.id %}">{{n.title|slice:60}}</a></h3>
+								<ul class="cp-post-tools">
+									<li><i class="icon-1"></i> {{n.created_at}}</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					
+					{% endfor %}
+				</ul>
+		</div>
+	</div>
+	<div class="widget advertisement">
+		<div class="ad-holder" style="margin-bottom: 20px; margin-top: 20px;"><img src="{% static 'images/horizontal-ad.jpg' %}" alt="" class="img-thumbnail"></div>
+	</div>
+</div>
+{% endblock %}

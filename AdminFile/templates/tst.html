@@ -1,0 +1,10 @@
+{% load thumbnail %}
+{% load embed_video_tags %}
+
+{% for video in videos %}
+<div class="video">
+{% video video.youtube_url %}
+<img src="{{ video.youtube_url|thumbnail }}" alt="{{ video.title }}">
+<h2>{{ video.title }}</h2>
+</div>
+{% endfor %}

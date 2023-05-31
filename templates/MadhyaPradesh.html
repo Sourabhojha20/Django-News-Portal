@@ -1,0 +1,62 @@
+﻿{% extends 'Base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-md-8">
+	<div class="section-title dgreen-border" style="margin-top:30px;">
+		<h2>मध्यप्रदेश</h2>
+	</div>
+	<div class="row">
+		<div class="cp-news-grid-style-6">
+			<ul class="grid">
+				{% for m in MadhyaPradesh %}
+					{% if m.status == 1 %}
+						<li class="col-md-6 col-sm-6 ">
+							<a href="single-post.html">
+								<div class="cp-post">
+									<div class="cp-thumbc"><img alt="" src="{{m.image.url}}" class="cp-thumbc"></div>
+									<div class="cp-post-content">
+										<h3><a href="{% url 'Detailview' m.id %}">{{m.title|slice:85}}</a></h3>
+									</div>
+								</div>
+							</a>
+						</li>
+					{% endif %}	
+				{% endfor %}
+				
+				
+				<div class="clearfix"></div>
+				
+			</ul>
+		</div>
+	</div> 
+	 <div class="pagination-holder">
+		<nav>
+			<ul class="pagination">
+				{% if MadhyaPradesh.has_previous %}
+				<li> <a href="/MadhyaPradesh/?page={{MadhyaPradesh.previous_page_number}}" aria-label="Previous"> <span aria-hidden="true"><i class="fa fa-angle-left"></i></span> </a> </li>
+				{% endif %}
+				<li class="active"><a href="/MadhyaPradesh/?page=1">1 <span class="sr-only"></span></a></li>
+				<li><a href="/MadhyaPradesh/?page=2">2</a></li>
+				<li><a href="/MadhyaPradesh/?page=3">3</a></li>
+				{% if  MadhyaPradesh.has_next %}
+				<li> <a href="/MadhyaPradesh/?page={{MadhyaPradesh.next_page_number}}" aria-label="Next"> <span aria-hidden="true"><i class="fa fa-angle-right"></i></span> </a> </li>
+				{% endif %}
+			</ul>
+		</nav>
+	</div> 
+	
+	
+	
+	
+	<div class="col-md-8">
+		<div class="cp-advertisement" style="padding-bottom: 20px; padding-top: 20px;">
+			{% for a in add %}
+            {% if a.ctg == 'Footer' %}
+			<img src="{{a.image.url}}" alt="">
+			{% endif %}
+               {% endfor %}
+		</div>
+	</div> 
+</div>  	
+{% endblock content %}

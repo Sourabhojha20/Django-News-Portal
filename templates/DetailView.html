@@ -1,0 +1,78 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-md-8" style="margin-top:30px;"> 					
+    <div class="cp-single-post">					 
+        <div class="cp-thumb"><img src="{{news.image.url}}" alt="No image"></div>
+        <div class="cp-post-content">
+            <h3><a href="#" style="line-height: initial;">{{news.title}}</a></h3>
+            <ul class="cp-post-tools">
+            <!--<li><i class="icon-1"></i></li>-->
+            <li><i class="icon-3"></i> {{news.category}}</li>
+            </ul>
+            <p>
+                {{news.description|safe}}
+            </p>
+    </div>					 
+       
+</div>
+ <div class="section-title dgreen-border" style="margin-top:30px;">
+            <h2>अन्य  खबर</h2>
+        </div>
+        <div class="row">
+            <div class="cp-news-grid-style-6">
+                <ul class="grid">
+                                                        <li class="col-md-6 col-sm-6">
+                        <a href="https://www.demoforclient.site/detail/82">
+                            <div class="cp-post">
+                                <div class="cp-thumbc"><img alt="No Image" src="https://www.demoforclient.site/uploads/news_menu/2023/e08be241905525f55944ed44aebe4b18.png" class="cp-thumbc"></div>
+                                <div class="cp-post-content">
+                                    <h3>राज्य में अब ट्रैफिक नियम तोड़ने वालों की खैर नहीं, हाईटेक तरीके से रखी जाएगी नजर</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                                                        
+                                                        <li class="col-md-6 col-sm-6">
+                        <a href="https://www.demoforclient.site/detail/81">
+                            <div class="cp-post">
+                                <div class="cp-thumbc"><img alt="No Image" src="https://www.demoforclient.site/uploads/news_menu/2023/723b53854fb0d457fbdecbfaba39b345.png" class="cp-thumbc"></div>
+                                <div class="cp-post-content">
+                                    <h3>MP : बारिश-ओलों से फसल बर्बाद, 50% से ज्यादा नुकसान पर किसानों को प्रति हेक्टेयर 32&#8230;</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                     <div class="clearfix"></div> 									
+                                                        <li class="col-md-6 col-sm-6">
+                        <a href="https://www.demoforclient.site/detail/87">
+                            <div class="cp-post">
+                                <div class="cp-thumbc"><img alt="No Image" src="https://www.demoforclient.site/uploads/news_menu/2019/b411826c266c6423c025da80d05987c9.jpg" class="cp-thumbc"></div>
+                                <div class="cp-post-content">
+                                    <h3>मुसलाधार बारिश से जलमग्न हुए कई क्षेत्र - नदी नाले उफान पर</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                                                        
+                                                        <li class="col-md-6 col-sm-6">
+                        <a href="https://www.demoforclient.site/detail/86">
+                            <div class="cp-post">
+                                <div class="cp-thumbc"><img alt="No Image" src="https://www.demoforclient.site/uploads/news_menu/2019/ab2ec2734a33fb28c7c6373b0fc731a8.jpg" class="cp-thumbc"></div>
+                                <div class="cp-post-content">
+                                    <h3>हमने बदहाल प्रदेश को खुशहाल बनाया है : मुख्यमंत्री श्री चौहान</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                                                        
+                                                    </ul>
+            </div>
+        </div>
+        
+        
+</div>
+
+
+{%endblock%}

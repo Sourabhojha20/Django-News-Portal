@@ -1,0 +1,265 @@
+{% extends 'Base2.html' %}
+{% load static %}
+{% block AdminContent %}
+
+<section class="content-header">
+    <h1>
+        Category        <!--<small>Optional description</small>-->
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active"></li>
+    </ol>
+</section>
+<!-- Main content -->
+{% comment %} <section class="content">
+    <!-- Your Page Content Here -->
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+                 <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <div style="float:left"><h3 class="box-title">Category List</h3></div>
+                </div><!-- /.box-header -->
+                                <div class="box-body">
+                    <table id="example36" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>Sno.</th>
+                            <th>Category Name</th>
+                            <th>Parent Category</th>
+                            <th>Link</th>                           
+                            <th>Status</th>
+                            <!--<th>Action</th>-->
+                        </tr>
+                        </thead>
+                        <tbody>
+                                                                            <tr>
+                                <td>1</td>
+                                <td>आज का राशिफल</td>
+                                <td>Parent Category</td>
+                                <td>todays_horoscope</td>
+                                <!--<td>51</td>-->
+                                <td>
+								Active								</td>
+                                <td>
+                                    <div class="btn-group">
+                                                                                                                    </div>
+                                </td>
+                            </tr>
+						                            <tr>
+                                <td>2</td>
+                                <td>आध्यात्म</td>
+                                <td>Parent Category</td>
+                                <td>आध्यात्म</td>
+                                <!--<td>50</td>-->
+                                <td>
+								Active								</td>
+                                <td>
+                                    <div class="btn-group">
+                                                                                                                    </div>
+                                </td>
+                            </tr>
+						                            <tr>
+                                <td>3</td>
+                                <td>खेल</td>
+                                <td>Parent Category</td>
+                                <td>खेल</td>
+                                <!--<td>39</td>-->
+                                <td>
+								Active								</td>
+                                <td>
+                                    <div class="btn-group">
+                                                                                                                    </div>
+                                </td>
+                            </tr>
+						                            <tr>
+                                <td>4</td>
+                                <td>देश-विदेश</td>
+                                <td>Parent Category</td>
+                                <td>देश-विदेश</td>
+                                <!--<td>35</td>-->
+                                <td>
+								Active								</td>
+                                <td>
+                                    <div class="btn-group">
+                                                                                                                    </div>
+                                </td>
+                            </tr>
+						                            <tr>
+                                <td>5</td>
+                                <td>फ़ीचर</td>
+                                <td>Parent Category</td>
+                                <td>फ़ीचर</td>
+                                <!--<td>34</td>-->
+                                <td>
+								Active								</td>
+                                <td>
+                                    <div class="btn-group">
+                                                                                                                    </div>
+                                </td>
+                            </tr>
+						                            <tr>
+                                <td>6</td>
+                                <td>मध्यप्रदेश</td>
+                                <td>Parent Category</td>
+                                <td>मध्यप्रदेश</td>
+                                <!--<td>37</td>-->
+                                <td>
+								Active								</td>
+                                <td>
+                                    <div class="btn-group">
+                                                                                                                    </div>
+                                </td>
+                            </tr>
+						                            <tr>
+                                <td>7</td>
+                                <td>महानगर</td>
+                                <td>Parent Category</td>
+                                <td>महानगर</td>
+                                <!--<td>38</td>-->
+                                <td>
+								Active								</td>
+                                <td>
+                                    <div class="btn-group">
+                                                                                                                    </div>
+                                </td>
+                            </tr>
+						                            <tr>
+                                <td>8</td>
+                                <td>राजनीति</td>
+                                <td>Parent Category</td>
+                                <td>राजनीति</td>
+                                <!--<td>52</td>-->
+                                <td>
+								Active								</td>
+                                <td>
+                                    <div class="btn-group">
+                                                                                                                    </div>
+                                </td>
+                            </tr>
+						                            <tr>
+                                <td>9</td>
+                                <td>विडियो</td>
+                                <td>Parent Category</td>
+                                <td>विडियो</td>
+                                <!--<td>36</td>-->
+                                <td>
+								Active								</td>
+                                <td>
+                                    <div class="btn-group">
+                                                                                                                    </div>
+                                </td>
+                            </tr>
+						                            <tr>
+                                <td>10</td>
+                                <td>व्यापार</td>
+                                <td>Parent Category</td>
+                                <td>व्यापार</td>
+                                <!--<td>41</td>-->
+                                <td>
+								Active								</td>
+                                <td>
+                                    <div class="btn-group">
+                                                                                                                    </div>
+                                </td>
+                            </tr>
+						                            <tr>
+                                <td>11</td>
+                                <td>शिक्षा</td>
+                                <td>Parent Category</td>
+                                <td>शिक्षा</td>
+                                <!--<td>33</td>-->
+                                <td>
+								Active								</td>
+                                <td>
+                                    <div class="btn-group">
+                                                                                                                    </div>
+                                </td>
+                            </tr>
+						                            <tr>
+                                <td>12</td>
+                                <td>सिनेमा</td>
+                                <td>Parent Category</td>
+                                <td>सिनेमा</td>
+                                <!--<td>40</td>-->
+                                <td>
+								Active								</td>
+                                <td>
+                                    <div class="btn-group">
+                                                                                                                    </div>
+                                </td>
+                            </tr>
+						                        </tbody>
+                    </table>
+                </div>
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div>
+    <!-- Main row -->
+</section><!-- /.content --> {% endcomment %}
+<section class="content">
+    <!-- Your Page Content Here -->
+  
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-header">
+            <div style="float:left"><h3 class="box-title">Category List</h3></div>
+          </div><!-- /.box-header -->
+  
+          <div class="box-body">
+            <table id="example36" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Sno.</th>
+                  <th>Category Name</th>
+                  <th>Parent Category</th>
+                  <th>Link</th>                           
+                  <th>Status</th>
+                  <!--<th>Action</th>-->
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>आज का राशिफल</td>
+                  <td>Parent Category</td>
+                  <td>todays_horoscope</td>
+                  <!--<td>51</td>-->
+                  <td>Active</td>
+                  <td>
+                    <div class="btn-group">
+                      <!-- Add any buttons you want here -->
+                    </div>
+                  </td>
+                </tr>
+  
+                <!-- Repeat for each category -->
+                
+                <tr>
+                  <td>11</td>
+                  <td>शिक्षा</td>
+                  <td>Parent Category</td>
+                  <td>शिक्षा</td>
+                  <!--<td>40</td>-->
+                  <td>Active</td>
+                  <td>
+                    <div class="btn-group">
+                      <!-- Add any buttons you want here -->
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div><!-- /.box-body -->
+        </div><!-- /.box -->
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </section><!-- /.content -->
+  
+<!-- jQuery 2.1.4 -->
+<script src="https://www.demoforclient.site/themes/admin/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+
+{% endblock %}
